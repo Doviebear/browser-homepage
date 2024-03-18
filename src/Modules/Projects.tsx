@@ -3,7 +3,10 @@ import ProjectItem from "../Components/ProjectItem";
 import { useLocalStorage } from "../Hooks";
 
 export default function Projects() {
-  const [projectNames, _] = useLocalStorage<string[]>("project-names", []);
+  const [projectNames, _setProjectNames] = useLocalStorage<string[]>(
+    "project-names",
+    []
+  );
   return (
     <div>
       <h1 className="module-header">Projects</h1>

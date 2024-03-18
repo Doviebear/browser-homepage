@@ -16,7 +16,7 @@ interface ProjectData {
 }
 
 export default function ProjectItem({ storageKey }: ProjectItemProps) {
-  const [projectData, setProjectData] = useLocalStorage<ProjectData>(
+  const [projectData, _setProjectData] = useLocalStorage<ProjectData>(
     storageKey,
     {
       name: storageKey,
