@@ -1,5 +1,5 @@
-import "./App.css";
-import { useLocalStorage } from "./Hooks";
+import "../App.css";
+import { useLocalStorage } from "../Hooks";
 
 type RoutineItemStorageType = "none" | "half" | "full";
 
@@ -11,9 +11,16 @@ export default function RoutineItem({ name }: RoutineItemsProps) {
   const [completionVal, setCompletionVal] =
     useLocalStorage<RoutineItemStorageType>(name, "none");
   return (
-    <div>
-      <p>{name}</p>
+    <div className="routine-item">
+      <p className="routine-item-name">{name}</p>
       <button
+        className={`routine-button ${
+          completionVal == "half"
+            ? "routine-button-half"
+            : completionVal == "full"
+            ? "routine-button-full"
+            : ""
+        }`}
         onClick={() => {
           if (completionVal == "none") {
             setCompletionVal("half");
@@ -23,9 +30,7 @@ export default function RoutineItem({ name }: RoutineItemsProps) {
             setCompletionVal("none");
           }
         }}
-      >
-        {completionVal}
-      </button>
+      ></button>
     </div>
   );
 }
