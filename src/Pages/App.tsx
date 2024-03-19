@@ -1,11 +1,14 @@
 import Projects from "../Modules/Projects";
 import Routine from "../Modules/Routine";
 import "../App.css";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { format } from "date-fns";
+
+export const TrashContext = createContext(false);
 
 function App() {
   const [goalInputText, setGoalInputText] = useState("");
+  const [trashMode, setTrashMode] = useState(false);
   return (
     <div className="root-div">
       <div>
@@ -42,9 +45,17 @@ function App() {
         ></textarea>
       </div>
       <div className="module-container">
-        <Projects />
-        <Routine />
+        <TrashContext.Provider value={trashMode}>
+          <Projects />
+          <Routine />
+        </TrashContext.Provider>
       </div>
+      <button
+        className={`trash-button ${trashMode ? "trash-button-active" : ""}`}
+        onClick={() => setTrashMode(!trashMode)}
+      >
+        Trash
+      </button>
     </div>
   );
 }

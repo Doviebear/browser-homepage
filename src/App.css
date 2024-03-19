@@ -149,3 +149,117 @@
 .project-item-link:hover {
   color: #303030;
 }
+
+.routines-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.routine-item-trash:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.project-item-trash:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.trash-button {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.trash-button-active {
+  color: red;
+}
+
+.project-item-link-add-container {
+  position: relative;
+}
+
+.add-link-container {
+  position: absolute;
+  border: 1px solid #666666;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.add-link-input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-link-input-name {
+  margin-right: 20px;
+}
+
+.add-link-input {
+  margin-right: 5px;
+}
+
+.routines-add-routine {
+  font-size: calc(16px * var(--font-size-mult));
+  background: transparent;
+  color: #666666;
+  padding: 0px;
+  border: none;
+  text-align: left;
+}
+
+.routines-add-routine:hover {
+  color: #303030;
+}
+
+.projects-add-project {
+  font-size: calc(24px * var(--font-size-mult));
+  background: transparent;
+  color: #666666;
+  padding: 0px;
+  border: none;
+  text-align: left;
+}
+
+.projects-add-project:hover {
+  color: #303030;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-add-project-input {
+  font-size: calc(24px * var(--font-size-mult));
+  font-weight: 400;
+  background-color: #e6e6e6;
+  outline: none;
+  border: none;
+}
+
+.routines-add-routine-input {
+  font-size: calc(16px * var(--font-size-mult));
+  font-weight: 400;
+  background-color: #e6e6e6;
+  outline: none;
+  border: none;
+}
+
+.add-link-button {
+  font-weight: 700;
+  font-size: calc(12px * var(--font-size-mult));
+  color: #666666;
+  text-decoration: underline;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0px;
+  text-transform: uppercase;
+}
+
+.add-link-button:hover {
+  color: #303030;
+}
