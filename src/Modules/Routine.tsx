@@ -10,10 +10,11 @@ export default function Routine() {
     []
   );
 
-  const addingInputKeypress = (e) => {
-    if (e.key == "Enter" && e.target.value !== "") {
+  const addingInputKeypress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    if (e.key == "Enter" && target.value !== "") {
       setAddingRoutine(false);
-      setRoutines([...routines, e.target.value]);
+      setRoutines([...routines, target.value]);
     }
   };
 

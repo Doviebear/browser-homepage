@@ -9,10 +9,11 @@ export default function Projects() {
   >("project-names", []);
   const [addingProject, setAddingProject] = useState(false);
 
-  const addingInputKeypress = (e) => {
-    if (e.key == "Enter" && e.target.value !== "") {
+  const addingInputKeypress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    if (e.key == "Enter" && target.value !== "") {
       setAddingProject(false);
-      setProjectNames([...projectNames, e.target.value]);
+      setProjectNames([...projectNames, target.value]);
     }
   };
 
