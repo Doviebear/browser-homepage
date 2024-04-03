@@ -3,11 +3,15 @@ import Routine from "../Modules/Routine";
 import "../App.css";
 import { createContext, useState } from "react";
 import { format } from "date-fns";
+import { useLocalStorage } from "../Hooks";
 
 export const TrashContext = createContext(false);
 
 function App() {
-  const [goalInputText, setGoalInputText] = useState("");
+  const [goalInputText, setGoalInputText] = useLocalStorage<string>(
+    "goalInputText",
+    ""
+  );
   const [trashMode, setTrashMode] = useState(false);
   return (
     <div className="root-div">
